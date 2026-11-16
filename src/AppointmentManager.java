@@ -102,13 +102,4 @@ public class AppointmentManager {
         }
         System.out.println("-----------------------------------------\n");
     }
-
-    /**
-     * Returns the number of appointments currently held.
-     *
-     * @return appointment count
-     */
-    public int getAppointmentCount() {
-        return appointments.size();
-    }
 }
