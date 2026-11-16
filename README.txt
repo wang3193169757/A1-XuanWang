@@ -1,6 +1,6 @@
 PROG2004-2026-T5  Object Oriented Programming
 Assessment 1 - Health Service Appointment System
-Author: Xuan Wang (Student ID: 252529340)
+Author: Xuan Wang (Student ID: 25259340)
 =====================================================================
 
 1. PROJECT STRUCTURE

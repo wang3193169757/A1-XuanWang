@@ -7,7 +7,7 @@ import java.util.Objects;
  * PROG2004 - Assessment 1: Health service appointment system.
  *
  * Author:          Xuan Wang
- * Student ID:      252529340
+ * Student ID:      25259340
  * GitHub repo:     https://github.com/wang3193169757/A1-XuanWang
  * Explanation video: <PASTE YOUR SHORT VIDEO LINK HERE>
  *
