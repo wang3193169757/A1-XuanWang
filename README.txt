@@ -72,13 +72,13 @@ then:
     unit assessor.
 [ ] Attach the WakaTime report/screenshots as A1-<username>-WakaTime.png
     (or .jpg / .pdf).
-[ ] Add the short explanation video link in the comments.
+[x] Add the short explanation video link in the comments.
 [x] GenAI declaration completed in the comments, and a separate signed
     declaration is saved in GenAI-Declaration.md (project root).
 
 
-5. PLACEHOLDERS TO REPLACE BEFORE SUBMITTING
+5. LINKS FILLED IN THE COMMENTS
 ---------------------------------------------------------------------
-- <PASTE YOUR SHORT VIDEO LINK HERE>  (in HealthProfessional.java and
-  AssignmentOne.java)
-- Confirm the GitHub repository link in the comments matches your repo.
+- Explanation video link: filled in HealthProfessional.java and
+  AssignmentOne.java.
+- GitHub repository link: filled in the same two files.
