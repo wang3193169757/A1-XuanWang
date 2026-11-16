@@ -7,7 +7,7 @@ import java.util.List;
  *
  * Author:          Xuan Wang
  * Student ID:      252529340
- * GitHub repo:     <PASTE YOUR GITHUB REPOSITORY LINK HERE>
+ * GitHub repo:     https://github.com/wang3193169757/A1-XuanWang
  * Explanation video: <PASTE YOUR SHORT VIDEO LINK HERE>
  *
  * GenAI declaration (complete before submission):
