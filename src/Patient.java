@@ -1,22 +1,14 @@
 /**
- * Part 4 - A patient.
- *
- * <p>Patient details (name and mobile number) are kept in their own small
- * class instead of being stored as loose strings inside an appointment. This
- * keeps the patient data encapsulated and reusable.</p>
+ * Patient details: name and contact mobile number, kept in their own class
+ * so the data is encapsulated and reusable.
  */
 public class Patient {
 
-    /** Patient full name. */
     private String name;
-
-    /** Contact mobile number (digits only). */
     private String mobile;
 
     /**
-     * Constructs a patient and validates the contact details.
-     *
-     * @param name   patient name (must not be blank)
+     * @param name   patient name, must not be blank
      * @param mobile mobile number: digits only, 8 to 15 characters
      */
     public Patient(String name, String mobile) {

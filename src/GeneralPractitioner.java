@@ -1,25 +1,19 @@
 import java.util.List;
 
 /**
- * Part 2 - A general practitioner (GP).
- *
- * <p>OOP concept: INHERITANCE.</p>
- * A GP reuses every shared field and behaviour from
- * {@link HealthProfessional} through {@code extends}, and only adds the
- * information and functions that are unique to a GP.
+ * A general practitioner (GP). Reuses the shared fields and behaviour from
+ * {@link HealthProfessional} and adds the GP-only consultation length.
  */
 public class GeneralPractitioner extends HealthProfessional {
 
-    /** Standard consultation length in minutes for this GP. */
+    /** Standard consultation length in minutes. */
     private int consultationMinutes;
 
     /**
-     * Full constructor.
-     *
-     * @param id                   numeric-only ID
-     * @param name                 GP name
-     * @param workingDays          roster days
-     * @param consultationMinutes  standard consultation length (minutes)
+     * @param id                  numeric-only ID
+     * @param name                GP name
+     * @param workingDays         roster days
+     * @param consultationMinutes consultation length in minutes, must be positive
      */
     public GeneralPractitioner(String id, String name, List<String> workingDays,
                                int consultationMinutes) {
@@ -35,7 +29,7 @@ public class GeneralPractitioner extends HealthProfessional {
      *
      * @param id                  numeric-only ID
      * @param name                GP name
-     * @param consultationMinutes standard consultation length (minutes)
+     * @param consultationMinutes consultation length in minutes
      */
     public GeneralPractitioner(String id, String name, int consultationMinutes) {
         super(id, name);
@@ -55,9 +49,9 @@ public class GeneralPractitioner extends HealthProfessional {
     }
 
     /**
-     * GP-specific behaviour: a GP can prescribe medication to a patient.
+     * Prescribes medication to a patient.
      *
-     * @param patient   the patient receiving the medication
+     * @param patient    patient receiving the medication
      * @param medication prescribed medication name
      * @return description of the prescription
      */
@@ -66,13 +60,6 @@ public class GeneralPractitioner extends HealthProfessional {
                 + medication + " to " + patient.getName() + ".";
     }
 
-    /**
-     * Reuses the shared summary from the parent class and appends the GP-only
-     * field. This is a form of runtime polymorphism: printing a GP through a
-     * common reference still shows the GP's own details.
-     *
-     * @return full GP details
-     */
     @Override
     public String toString() {
         return super.toString()

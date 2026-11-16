@@ -3,27 +3,22 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Part 5 - Manages the collection of the day's appointments.
- *
- * <p>An {@link ArrayList} stores the appointments. The manager can add an
+ * Manages the collection of the day's appointments. It can add an
  * appointment (rejecting a double booking for the same professional in the
- * same slot), filter appointments by professional ID or patient mobile
- * number, sort any full or filtered list in time order, and cancel an
- * appointment. Every operation gives clear feedback when it succeeds or
- * fails. The manager works with the abstract {@link HealthProfessional}
- * type, so it accepts any concrete professional type and types added later.</p>
+ * same slot), filter by professional ID or patient mobile, sort any full or
+ * filtered list in time order, and cancel an appointment. Every operation
+ * gives clear feedback when it succeeds or fails. The manager works with the
+ * abstract {@link HealthProfessional} type, so it accepts any subtype.
  */
 public class AppointmentManager {
 
-    /** All appointments held for the current day. */
     private List<Appointment> appointments = new ArrayList<>();
 
     /**
-     * Attempts to add an appointment. A professional cannot be booked twice in
-     * the same slot.
+     * Adds an appointment; a professional cannot be booked twice in the same slot.
      *
      * @param appointment appointment to add
-     * @return true if it was added, false if it was rejected
+     * @return true if added, false if rejected
      */
     public boolean addAppointment(Appointment appointment) {
         if (appointment == null) {
@@ -50,8 +45,7 @@ public class AppointmentManager {
     }
 
     /**
-     * Returns the appointments for the professional with the given ID,
-     * ordered from earliest to latest.
+     * Returns appointments for the professional with the given ID, earliest first.
      *
      * @param professionalId numeric professional ID to match
      * @return sorted list of matching appointments (may be empty)
@@ -68,8 +62,8 @@ public class AppointmentManager {
     }
 
     /**
-     * Returns the appointments booked by the patient with the given mobile
-     * number, ordered from earliest to latest.
+     * Returns appointments booked by the patient with the given mobile number,
+     * earliest first.
      *
      * @param mobile patient mobile number to match
      * @return sorted list of matching appointments (may be empty)
@@ -86,13 +80,12 @@ public class AppointmentManager {
     }
 
     /**
-     * Cancels the appointment matching the given patient, slot and
-     * professional.
+     * Cancels the appointment matching the given patient, slot and professional.
      *
      * @param patient      patient holding the appointment
      * @param timeSlot     booked slot
      * @param professional booked professional
-     * @return true if an appointment was removed, false if none matched
+     * @return true if removed, false if none matched
      */
     public boolean cancelAppointment(Patient patient, String timeSlot,
                                     HealthProfessional professional) {
@@ -120,7 +113,7 @@ public class AppointmentManager {
      *
      * @param professionalId numeric professional ID
      * @param timeSlot       booked slot
-     * @return true if an appointment was removed, false if none matched
+     * @return true if removed, false if none matched
      */
     public boolean cancelAppointmentByProfessionalId(String professionalId,
                                                      String timeSlot) {
@@ -142,8 +135,7 @@ public class AppointmentManager {
     }
 
     /**
-     * Cancels every appointment held by the patient with the given mobile
-     * number.
+     * Cancels every appointment held by the patient with the given mobile number.
      *
      * @param mobile patient mobile number
      * @return number of appointments cancelled (0 if none matched)
@@ -171,9 +163,7 @@ public class AppointmentManager {
     }
 
     /**
-     * Prints a list of appointments under a heading. The list is printed in
-     * the order it is given; filter methods already return a time-ordered
-     * subset.
+     * Prints a list of appointments under a heading, in the order given.
      *
      * @param subset  appointments to print
      * @param heading title shown above the list
@@ -191,8 +181,8 @@ public class AppointmentManager {
     }
 
     /**
-     * Prints every appointment in time order (earliest first). A copy of the
-     * list is sorted so the internal collection is left untouched.
+     * Prints every appointment in time order. A copy of the list is sorted so
+     * the internal collection is left untouched.
      */
     public void listAppointments() {
         if (appointments.isEmpty()) {

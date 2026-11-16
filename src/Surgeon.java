@@ -1,24 +1,18 @@
 import java.util.List;
 
 /**
- * Part 2 - A surgeon.
- *
- * <p>OOP concept: INHERITANCE.</p>
- * A surgeon extends {@link HealthProfessional} and records the surgical area
- * they work in, together with a surgeon-specific action.
+ * A surgeon. Extends {@link HealthProfessional} and records the surgical area.
  */
 public class Surgeon extends HealthProfessional {
 
-    /** Surgical area, e.g. "Orthopaedics", "General Surgery". */
+    /** Surgical area, e.g. "Orthopaedics". */
     private String surgeryArea;
 
     /**
-     * Full constructor.
-     *
      * @param id          numeric-only ID
      * @param name        surgeon name
      * @param workingDays roster days
-     * @param surgeryArea surgical area
+     * @param surgeryArea surgical area, must not be blank
      */
     public Surgeon(String id, String name, List<String> workingDays,
                    String surgeryArea) {
@@ -54,10 +48,10 @@ public class Surgeon extends HealthProfessional {
     }
 
     /**
-     * Surgeon-specific behaviour: prepares an operating list for a patient.
+     * Prepares a patient for surgery.
      *
      * @param patient patient to be prepared
-     * @return description of the surgical preparation
+     * @return description of the preparation
      */
     public String prepareOperation(Patient patient) {
         return getName() + " (" + surgeryArea + ") prepared "
@@ -69,4 +63,3 @@ public class Surgeon extends HealthProfessional {
         return super.toString() + " | Surgery area: " + surgeryArea;
     }
 }
-

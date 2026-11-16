@@ -1,24 +1,18 @@
 import java.util.List;
 
 /**
- * Part 2 - A nurse.
- *
- * <p>OOP concept: INHERITANCE + POLYMORPHISM.</p>
- * A nurse extends {@link HealthProfessional}, records the ward they work on,
- * and provides a nurse-specific action (taking a blood sample).
+ * A nurse. Extends {@link HealthProfessional} and records the assigned ward.
  */
 public class Nurse extends HealthProfessional {
 
-    /** Ward the nurse is assigned to, e.g. "Emergency", "Ward 3B". */
+    /** Ward the nurse is assigned to, e.g. "Ward 3B". */
     private String ward;
 
     /**
-     * Full constructor.
-     *
      * @param id          numeric-only ID
      * @param name        nurse name
      * @param workingDays roster days
-     * @param ward        assigned ward
+     * @param ward        assigned ward, must not be blank
      */
     public Nurse(String id, String name, List<String> workingDays, String ward) {
         super(id, name, workingDays);
@@ -53,7 +47,7 @@ public class Nurse extends HealthProfessional {
     }
 
     /**
-     * Nurse-specific behaviour: takes a blood sample from a patient.
+     * Takes a blood sample from a patient.
      *
      * @param patient patient being sampled
      * @return description of the blood sample

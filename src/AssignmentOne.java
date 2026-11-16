@@ -15,13 +15,12 @@ import java.util.List;
  *     approved by the Unit Assessor. I have read, understood and can explain
  *     every line of code in this project. Comments and the explanation video
  *     were completed by me.
- *
- * Part 3 and Part 6 - End-to-end demonstration of the appointment system.
- *
- * <p>The main method builds the professional team, stores them together
- * through the common {@link HealthProfessional} type (polymorphism), then
- * books, filters, cancels and lists appointments. Both normal and error
- * cases are exercised.</p>
+ */
+
+/**
+ * End-to-end demonstration: builds the professional team, stores them through
+ * the common {@link HealthProfessional} type, then books, filters, cancels
+ * and lists appointments. Both normal and error cases are exercised.
  */
 public class AssignmentOne {
 
@@ -29,8 +28,7 @@ public class AssignmentOne {
         System.out.println("=== PROG2004 Assessment 1 - Health service "
                 + "appointment system ===\n");
 
-        // ---------- Part 3: create the professional team ----------
-
+        // Create the professional team.
         GeneralPractitioner gp1 = new GeneralPractitioner(
                 "1001", "Dr Alice Walker",
                 Arrays.asList("Monday", "Wednesday", "Friday"), 15);
@@ -64,8 +62,7 @@ public class AssignmentOne {
         }
         System.out.println();
 
-        // ---------- Part 6: appointment simulation ----------
-
+        // Appointment simulation.
         Patient john = new Patient("John Doe", "0412345678");
         Patient mary = new Patient("Mary Smith", "0412987654");
         Patient bob = new Patient("Bob Brown", "0432109876");
@@ -108,8 +105,7 @@ public class AssignmentOne {
                 manager.filterByPatientMobile("0432109876"),
                 "Appointments for patient 0432109876");
 
-        // Cancellation: an existing appointment matched by patient, slot and
-        // professional.
+        // Cancellation matched by patient, slot and professional.
         System.out.println("\n--- Cancellation (patient + slot + professional) ---");
         manager.cancelAppointment(mary, "09:30", gp1);
 
@@ -121,7 +117,7 @@ public class AssignmentOne {
         System.out.println("\n--- Cancellation (patient mobile number) ---");
         manager.cancelAppointmentByPatientMobile("0456781234");
 
-        // Error cases: cancelling an appointment that does not exist.
+        // Error case 3: cancelling an appointment that does not exist.
         System.out.println("\n--- Error case 3: cancel a non-existent appointment ---");
         manager.cancelAppointmentByProfessionalId("9999", "09:00");
         manager.cancelAppointmentByPatientMobile("0400000000");

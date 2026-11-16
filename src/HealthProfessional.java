@@ -16,38 +16,26 @@ import java.util.Objects;
  *     approved by the Unit Assessor. I have read, understood and can explain
  *     every line of code in this project. Comments and the explanation video
  *     were completed by me.
- *
- * -------------------------------------------------------------------------
- * Part 1 - Modelling a generic health professional.
- *
- * <p>OOP concept: ABSTRACTION + ENCAPSULATION.</p>
- * This class is abstract: it captures the information and behaviour that are
- * common to every health professional, but a "plain" professional with no
- * specialty makes no sense, so this class cannot be instantiated directly.
- * Every concrete type (GP, Specialist, Surgeon, Nurse) must provide its own
- * specialty label by implementing the abstract method {@link #getSpecialty()}.
- *
- * <p>All fields are private and only reached through getters, and the
- * constructor validates the incoming data, so an object can never be created
- * in an incomplete or invalid state.</p>
+ */
+
+/**
+ * Holds the information and behaviour shared by every health professional.
+ * The class is abstract, so it cannot be instantiated directly; each
+ * subclass provides its own specialty through {@link #getSpecialty()}.
  */
 public abstract class HealthProfessional {
 
-    /** Numeric-only identifier for the professional. */
     private String id;
-
-    /** Full name of the professional. */
     private String name;
-
-    /** Fixed set of working days, e.g. "Monday", "Wednesday", "Friday". */
+    /** Fixed set of working days, e.g. "Monday", "Wednesday". */
     private List<String> workingDays;
 
     /**
-     * Full constructor. Sets up the shared information and validates it.
+     * Sets up the shared information and checks that it is valid.
      *
      * @param id          numeric-only professional ID
-     * @param name        professional name (must not be blank)
-     * @param workingDays list of working days (must not be empty)
+     * @param name        professional name, must not be blank
+     * @param workingDays working days, must not be empty
      */
     protected HealthProfessional(String id, String name, List<String> workingDays) {
         if (id == null || !id.matches("\\d+")) {
@@ -67,8 +55,7 @@ public abstract class HealthProfessional {
     }
 
     /**
-     * Overloaded constructor: a professional who works the standard
-     * Monday-Friday roster. Subclasses can reuse this shorter form.
+     * Shorter constructor for a professional on the standard Monday-Friday roster.
      *
      * @param id   numeric-only professional ID
      * @param name professional name
@@ -79,14 +66,11 @@ public abstract class HealthProfessional {
     }
 
     /**
-     * Returns the specialty label of this professional, e.g.
-     * "General Practitioner". Implemented by every concrete subclass.
+     * Returns the specialty label of this professional.
      *
      * @return specialty description
      */
     public abstract String getSpecialty();
-
-    // --- Getters ---------------------------------------------------------
 
     public String getId() {
         return id;
@@ -97,8 +81,7 @@ public abstract class HealthProfessional {
     }
 
     /**
-     * Returns a copy of the working-day list so the internal list is
-     * protected from external modification.
+     * Returns a copy of the working-day list so the internal list is protected.
      *
      * @return copy of the working days
      */
@@ -106,12 +89,9 @@ public abstract class HealthProfessional {
         return new ArrayList<>(workingDays);
     }
 
-    // --- Shared behaviour -------------------------------------------------
-
     /**
-     * Two professionals are considered equal when they share the same ID.
-     * This lets the appointment manager detect a double booking by the same
-     * professional, regardless of which concrete type they are.
+     * Two professionals are equal when they share the same ID, so the manager
+     * can detect a double booking regardless of the concrete type.
      *
      * @param o object to compare
      * @return true if both professionals have the same ID
@@ -134,8 +114,8 @@ public abstract class HealthProfessional {
     }
 
     /**
-     * Builds the shared part of the professional's details. Subclasses call
-     * {@code super.toString()} and append their own extra information.
+     * Builds the shared part of the details; subclasses call super.toString()
+     * and append their own extra information.
      *
      * @return readable summary of the shared fields
      */

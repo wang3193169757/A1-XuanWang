@@ -1,31 +1,20 @@
 /**
- * Part 4 - A single appointment.
- *
- * <p>An appointment links one {@link Patient} to any type of
- * {@link HealthProfessional} for one clinic slot. Because the appointment
- * depends only on the abstract parent type, it works with GP, Specialist,
- * Surgeon and Nurse objects alike.</p>
- *
- * <p>The constructor rejects missing or invalid data, so an appointment can
- * never exist in an incomplete state. {@link Comparable} lets a whole
- * collection of appointments be sorted from earliest to latest.</p>
+ * One appointment links a {@link Patient} to a chosen
+ * {@link HealthProfessional} for one clinic slot. It depends only on the
+ * abstract parent type, so it works with any professional subtype.
+ * {@link Comparable} lets the appointments be sorted from earliest to latest.
  */
 public class Appointment implements Comparable<Appointment> {
 
-    /** The patient who booked. */
     private Patient patient;
-
-    /** The chosen professional (any concrete subtype). */
     private HealthProfessional professional;
-
-    /** Booking slot in "HH:mm" format, from {@link ClinicSchedule}. */
     private String timeSlot;
 
     /**
-     * Constructs an appointment after validating every required detail.
+     * Checks that every required detail is present before creating the appointment.
      *
-     * @param patient      booking patient (must not be null)
-     * @param professional chosen professional (must not be null)
+     * @param patient      booking patient, must not be null
+     * @param professional chosen professional, must not be null
      * @param timeSlot     valid clinic slot, e.g. "09:00"
      */
     public Appointment(Patient patient, HealthProfessional professional,
@@ -59,9 +48,8 @@ public class Appointment implements Comparable<Appointment> {
     }
 
     /**
-     * Orders appointments by slot, earliest first. If two appointments share
-     * the same slot, they are ordered by professional ID to keep the result
-     * stable.
+     * Orders by slot, earliest first; ties are broken by professional ID
+     * to keep the result stable.
      *
      * @param other the appointment to compare against
      * @return negative, zero or positive as in {@link Comparable}
@@ -77,11 +65,6 @@ public class Appointment implements Comparable<Appointment> {
         return this.professional.getId().compareTo(other.professional.getId());
     }
 
-    /**
-     * Full appointment summary, including the professional's own details.
-     *
-     * @return readable appointment description
-     */
     @Override
     public String toString() {
         return "Appointment | Time: " + timeSlot
@@ -89,4 +72,3 @@ public class Appointment implements Comparable<Appointment> {
                 + " | Professional: " + professional;
     }
 }
-
