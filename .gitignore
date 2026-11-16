@@ -7,9 +7,6 @@ out/
 .idea/
 *.iml
 
-# Non-assignment helper tool (not part of the submission)
-tools/
-
 # OS junk
 Thumbs.db
 .DS_Store
