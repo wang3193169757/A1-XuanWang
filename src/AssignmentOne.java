@@ -8,7 +8,7 @@ import java.util.List;
  * Author:          Xuan Wang
  * Student ID:      25259340
  * GitHub repo:     https://github.com/wang3193169757/A1-XuanWang
- * Explanation video: <PASTE YOUR SHORT VIDEO LINK HERE>
+ * Explanation video: https://scuonline-my.sharepoint.com/:v:/g/personal/x_wang_127_student_scu_edu_au/IQDKWHSZehwVQ7Iu9MnPXcoYARUx25MSZiWxleD1QBt5w1A?e=oe62sW
  *
  * GenAI declaration:
  * [x] I used a Generative AI tool within the permitted scope to check the
