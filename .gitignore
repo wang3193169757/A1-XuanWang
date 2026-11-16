@@ -7,6 +7,9 @@ out/
 .idea/
 *.iml
 
+# Local submission artifacts (zip, report) - not part of the source repo
+submission/
+
 # OS junk
 Thumbs.db
 .DS_Store
