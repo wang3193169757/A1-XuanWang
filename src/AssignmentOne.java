@@ -10,19 +10,20 @@ import java.util.List;
  * GitHub repo:     https://github.com/wang3193169757/A1-XuanWang
  * Explanation video: <PASTE YOUR SHORT VIDEO LINK HERE>
  *
- * GenAI declaration (complete before submission):
- * [ ] I did not use any Generative AI tool for this submission.
- * [ ] I used a Generative AI tool for: <describe the parts>, and I have read,
- *     understood and can explain every line of code in this project.
+ * GenAI declaration:
+ * [x] I used a Generative AI tool for assistance with writing the code, as
+ *     approved by the Unit Assessor. I have read, understood and can explain
+ *     every line of code in this project. Comments and the explanation video
+ *     were completed by me.
  *
  * Part 3 and Part 6 - End-to-end demonstration of the appointment system.
  *
  * <p>The main method builds the professional team, stores them together
  * through the common {@link HealthProfessional} type (polymorphism), then
- * books, rejects, cancels and lists appointments. Both normal and error
+ * books, filters, cancels and lists appointments. Both normal and error
  * cases are exercised.</p>
  */
-public class Main {
+public class AssignmentOne {
 
     public static void main(String[] args) {
         System.out.println("=== PROG2004 Assessment 1 - Health service "
@@ -97,10 +98,33 @@ public class Main {
         System.out.println(surgeon.prepareOperation(sarah));
         System.out.println(nurse.takeBloodSample(sarah));
 
-        // Cancellation: an existing appointment, then one that does not exist.
-        System.out.println("\n--- Cancellation ---");
+        // Filtering: by professional ID, and by patient mobile number. Each
+        // filtered subset is returned already sorted in time order.
+        System.out.println("\n--- Filtering appointments ---");
+        manager.printAppointments(
+                manager.filterByProfessionalId("1001"),
+                "Appointments for professional 1001");
+        manager.printAppointments(
+                manager.filterByPatientMobile("0432109876"),
+                "Appointments for patient 0432109876");
+
+        // Cancellation: an existing appointment matched by patient, slot and
+        // professional.
+        System.out.println("\n--- Cancellation (patient + slot + professional) ---");
         manager.cancelAppointment(mary, "09:30", gp1);
-        manager.cancelAppointment(sarah, "10:00", surgeon);
+
+        // Cancellation matched by professional ID and time slot.
+        System.out.println("\n--- Cancellation (professional ID + slot) ---");
+        manager.cancelAppointmentByProfessionalId("2001", "09:00");
+
+        // Cancellation matched by patient mobile number.
+        System.out.println("\n--- Cancellation (patient mobile number) ---");
+        manager.cancelAppointmentByPatientMobile("0456781234");
+
+        // Error cases: cancelling an appointment that does not exist.
+        System.out.println("\n--- Error case 3: cancel a non-existent appointment ---");
+        manager.cancelAppointmentByProfessionalId("9999", "09:00");
+        manager.cancelAppointmentByPatientMobile("0400000000");
 
         manager.listAppointments();
     }

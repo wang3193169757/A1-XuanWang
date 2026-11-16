@@ -11,11 +11,11 @@ import java.util.Objects;
  * GitHub repo:     https://github.com/wang3193169757/A1-XuanWang
  * Explanation video: <PASTE YOUR SHORT VIDEO LINK HERE>
  *
- * GenAI declaration (complete and keep before submission):
- * [ ] I did not use any Generative AI tool for this submission.
- * [ ] I used a Generative AI tool for: <describe the parts, e.g. checking syntax /
- *       drafting comments>, and I have read, understood and can explain every line
- *       of code in this project.
+ * GenAI declaration:
+ * [x] I used a Generative AI tool for assistance with writing the code, as
+ *     approved by the Unit Assessor. I have read, understood and can explain
+ *     every line of code in this project. Comments and the explanation video
+ *     were completed by me.
  *
  * -------------------------------------------------------------------------
  * Part 1 - Modelling a generic health professional.

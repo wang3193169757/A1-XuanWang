@@ -15,9 +15,13 @@ src/
   Patient.java               Patient name + mobile number (Part 4)
   ClinicSchedule.java        Fixed daily slots 08:00-16:00, 30 min (Part 5)
   Appointment.java           One appointment, Comparable by time (Part 4)
-  AppointmentManager.java    Collection of appointments: add / cancel /
-                              list, with double-booking protection (Part 5)
-  Main.java                  Part 3 + Part 6: scripted end-to-end demo
+  AppointmentManager.java    Collection of appointments: add, filter by
+                             professional ID / patient mobile, sort, cancel
+                             by patient+slot+professional, by professional
+                             ID+slot, or by patient mobile; double-booking
+                             protection (Part 5)
+  AssignmentOne.java         Part 3 + Part 6: scripted end-to-end demo
+                             (contains the main method)
 
 
 2. HOW TO COMPILE AND RUN (Windows)
@@ -26,9 +30,9 @@ Open a terminal in the project folder (the folder that contains src/),
 then:
 
   javac -encoding utf8 -d out src\*.java
-  java -cp out Main
+  java -cp out AssignmentOne
 
-(You need a JDK installed. The demo was compiled with OpenJDK 11.)
+(You need a JDK installed. The demo was compiled with OpenJDK 25.)
 
 
 3. FOUR OOP PILLARS - WHERE THEY APPEAR (for the explanation video)
@@ -63,17 +67,18 @@ then:
     (e.g. if your username were lfolkman, the file would be
     A1-lfolkman.zip).
 [ ] Push the project to GitHub; add the repository link in the comments
-    (placeholders are already in HealthProfessional.java and Main.java).
-    If the repo is private, invite your tutor and unit assessor.
+    (placeholders are already in HealthProfessional.java and
+    AssignmentOne.java). If the repo is private, invite your tutor and
+    unit assessor.
 [ ] Attach the WakaTime report/screenshots as A1-<username>-WakaTime.png
     (or .jpg / .pdf).
 [ ] Add the short explanation video link in the comments.
-[ ] Complete the GenAI declaration in the comments (tick one option and,
-    if you used GenAI, describe which parts).
+[x] GenAI declaration completed in the comments, and a separate signed
+    declaration is saved in GenAI-Declaration.md (project root).
 
 
 5. PLACEHOLDERS TO REPLACE BEFORE SUBMITTING
 ---------------------------------------------------------------------
-- <PASTE YOUR GITHUB REPOSITORY LINK HERE>
-- <PASTE YOUR SHORT VIDEO LINK HERE>
-- GenAI declaration tick box and description
+- <PASTE YOUR SHORT VIDEO LINK HERE>  (in HealthProfessional.java and
+  AssignmentOne.java)
+- Confirm the GitHub repository link in the comments matches your repo.
