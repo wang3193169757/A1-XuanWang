@@ -11,6 +11,9 @@ out/
 submission/
 *.zip
 
+# Video build intermediates (slides, segments, check frames)
+video_build/
+
 # OS junk
 Thumbs.db
 .DS_Store
