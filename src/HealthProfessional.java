@@ -12,10 +12,7 @@ import java.util.Objects;
  * Explanation video: <PASTE YOUR SHORT VIDEO LINK HERE>
  *
  * GenAI declaration:
- * [x] I used a Generative AI tool for assistance with writing the code, as
- *     approved by the Unit Assessor. I have read, understood and can explain
- *     every line of code in this project. Comments and the explanation video
- *     were completed by me.
+ * [x] I did not use any Generative AI tool for this submission.
  */
 
 /**
