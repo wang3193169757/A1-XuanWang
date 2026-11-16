@@ -11,7 +11,9 @@ import java.util.List;
  * Explanation video: <PASTE YOUR SHORT VIDEO LINK HERE>
  *
  * GenAI declaration:
- * [x] I did not use any Generative AI tool for this submission.
+ * [x] I used a Generative AI tool within the permitted scope to check the
+ *     completeness of my code and to help correct errors. I have read,
+ *     understood and can explain every line of code in this project.
  */
 
 /**
