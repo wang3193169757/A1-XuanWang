@@ -9,6 +9,7 @@ out/
 
 # Local submission artifacts (zip, report) - not part of the source repo
 submission/
+*.zip
 
 # OS junk
 Thumbs.db
